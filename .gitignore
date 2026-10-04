@@ -1,0 +1,7 @@
+# AgentSpaces specification and conformance kit: documents and golden.json only.
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
