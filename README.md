@@ -2,6 +2,12 @@
 
 The language-neutral half of AgentSpaces: what every implementation claims conformance *to*.
 
+**Licence.** The specification text in this repository (`SPEC.md`, `TECH-SPEC.md` and this
+README) is [CC BY-ND 4.0](LICENSE); `golden.json`, `sync-golden.sh` and the embedded samples are
+[Apache 2.0](LICENSE-SAMPLES-APACHE-2.0). Implementing the specification, and building on any
+implementation, is free and unconditional. [NOTICE.md](NOTICE.md) states the rights in full, and
+[License](#license) summarizes them.
+
 | File | What it is |
 | --- | --- |
 | `SPEC.md` | The normative specification (v0.1.13): identity, peering, discovery, the replicated space, capabilities, the programming model, security. |
@@ -173,3 +179,18 @@ crashing the receiver. All three implementations reject the same set:
 
 The specification's revision history is SPEC.md §15. A change to any signed structure
 regenerates the vectors, and the three suites must be green before the change lands.
+
+## License
+
+The specification **text** is licensed under
+[Creative Commons Attribution-NoDerivatives 4.0 International](LICENSE) (CC BY-ND 4.0). The
+golden vectors, the sync script, and the code and data **samples** embedded in the documents are
+under the [Apache License 2.0](LICENSE-SAMPLES-APACHE-2.0), so you can copy, vendor and adapt
+them freely.
+
+**Implementing this specification, and building agents and applications over any conforming
+implementation, is free**, publicly, privately or commercially, without permission, notification
+or royalty. Implementations you build are yours and are not derivative works of this document.
+Attribution is required only when you redistribute the specification text itself.
+
+See [NOTICE.md](NOTICE.md) for the full statement of rights.
