@@ -12,7 +12,7 @@ implementation, is free and unconditional. [NOTICE.md](NOTICE.md) states the rig
 | --- | --- |
 | `SPEC.md` | The normative specification (v0.1.13): identity, peering, discovery, the replicated space, capabilities, the programming model, security. |
 | `TECH-SPEC.md` | What the reference implementation puts on the wire, byte by byte, and which algorithm runs behind each operation; §1.5 defines conformance and §10 is the checklist a new implementation follows. |
-| `golden.json` | The golden vectors: 92 named byte strings and values a conforming implementation reproduces exactly (70 of them) or refuses (22 hostile `adv_*` inputs). |
+| `golden.json` | The golden vectors: 197 named entries, 158 byte strings and values a conforming implementation reproduces exactly and 39 hostile `adv_*` inputs it refuses. |
 | `sync-golden.sh` | Copies `golden.json` into every consumer's vendored location and checks the copies are identical. |
 
 ## How the implementations reference this

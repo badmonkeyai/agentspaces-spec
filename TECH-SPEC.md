@@ -2,7 +2,7 @@
 
 **Protocols, Algorithms, and Data Formats of the Reference Implementation**
 
-Companion to `SPEC.md` (v0.1.13). Where `SPEC.md` states the design normatively, this document describes what the reference implementation in the `agentspaces/` repository actually puts on the wire, byte by byte, and which algorithm runs behind each operation, layer by layer. Every structure named here exists in the code, every constant is quoted from it, §2 explains why this particular set of protocols was selected at all, and §11 records the places where the implementation still trails the design. A developer building a wire-compatible client, auditing the security mechanisms, or extending a layer should read this document beside the source; a developer deciding whether to adopt AgentSpaces should read `WHY.md` first.
+Companion to `SPEC.md` (v0.1.21). Where `SPEC.md` states the design normatively, this document describes what the reference implementation in the `agentspaces/` repository actually puts on the wire, byte by byte, and which algorithm runs behind each operation, layer by layer. Every structure named here exists in the code, every constant is quoted from it, §2 explains why this particular set of protocols was selected at all, and §11 records the places where the implementation still trails the design. A developer building a wire-compatible client, auditing the security mechanisms, or extending a layer should read this document beside the source; a developer deciding whether to adopt AgentSpaces should read `WHY.md` first.
 
 ## 1. Conventions and Primitives
 
