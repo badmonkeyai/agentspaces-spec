@@ -10,6 +10,7 @@ copies=(
   "$root/agentspaces-python/tests/golden.json"
   "$root/agentspaces-typescript/test/golden.json"
   "$root/agentspaces-rb/gems/agentspaces/test/golden.json"
+  "$root/agentspaces-rust/crates/agentspaces-wire/tests/golden.json"
 )
 for c in "${copies[@]}"; do
   mkdir -p "$(dirname "$c")"
