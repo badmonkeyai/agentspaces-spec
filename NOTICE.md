@@ -5,13 +5,13 @@ Copyright 2026 Bad Monkey, Inc. (https://badmonkey.ai)
 ## What this repository contains
 
 This repository holds the **AgentSpaces specification and conformance kit**: `SPEC.md` and
-`TECH-SPEC.md` are documents, and they are licensed as documents. `golden.json` and
+`TECH-SPEC.md` are documents, and they are licensed as documents, as are the README and the pages under `docs/`. `golden.json` and
 `sync-golden.sh` are data and code, and they are licensed as code.
 
 ## Specification text
 
-The prose of every specification (SPEC.md, TECH-SPEC.md) in this repository, including this file and the README, is
-licensed under
+The prose of every specification (SPEC.md, TECH-SPEC.md) in this repository, including this file, the README, and
+the pages under `docs/`, is licensed under
 **[Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)](LICENSE)**.
 
 In plain terms: you may copy and redistribute the specifications, in any medium or format, for any

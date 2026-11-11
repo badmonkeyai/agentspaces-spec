@@ -4,15 +4,15 @@
 
 | | |
 |---|---|
-| Document | `agentspaces-spec/REGISTRY.md`, revision 2, 2026-11-09 |
-| Status | Written under owner decision 1 of 2026-11-09 with ISSUE-AppCardOriginFormats. Revision 2 applies the owner's answers of 2026-11-09 (that issue's §16): no origin system fixes a kind (answer 3), and the system `console` names the apps a console drafts (answer 10). The registry starts with SPEC v0.1.32. |
+| Document | `agentspaces-spec/REGISTRY.md`, revision 4, 2026-11-11 |
+| Status | The registry starts with SPEC v0.1.32. Revision 1 (2026-11-09) opens it. Revision 2 (2026-11-09) states that no origin system fixes a kind, and registers the system `console` for the apps a console drafts. Revision 3 (2026-11-10) points each protocol citation at `SPEC.md` and changes no value. Revision 4 (2026-11-11), with SPEC v0.1.33 and `REALM.md` revision 4, registers the `realm` keys `realm.commit` and `realm.digest` in place of the proposed `realm.bundle`. |
 | Scope | `AppCard.origin.system`, the `origin.attrs` keys of each system, and the well-known entries of `AppCard.formats` (SPEC §6.1a.2) |
 
 ## 1. The lists are open
 
-A reader never refuses a card because it names a system, an attribute, or a format this registry lacks, as long as the value meets the grammar of SPEC §6.1a.2 (ISSUE-AppCardOriginFormats FR-4). The registry exists so that two parties who mean the same thing write the same string, and so that discovery by origin or by format finds what it should. Registering a value changes no schema, no wire version, and no golden vector. The closed fields of the card (`kind`, `shape`, `ui.transport`, `ui.components[].role`, `host.signOn`, `host.status`) stay in `SPEC.md` and change only with a SPEC revision.
+A reader never refuses a card because it names a system, an attribute, or a format this registry lacks, as long as the value meets the grammar of SPEC §6.1a.2. The registry exists so that two parties who mean the same thing write the same string, and so that discovery by origin or by format finds what it should. Registering a value changes no schema, no wire version, and no golden vector. The closed fields of the card (`kind`, `shape`, `ui.transport`, `ui.components[].role`, `host.signOn`, `host.status`) stay in `SPEC.md` and change only with a SPEC revision.
 
-No origin system fixes a card's `kind` (owner answer 3, 2026-11-09). A row names what the system is and how its `ref` and `attrs` read, and it never names a kind: the publisher chooses the kind from how the app connects (SPEC §6.1a.2), and a reader never refuses or reinterprets a card for its pair of kind and origin. Where a row says which kind a known importer writes, it describes that importer's behaviour today. Neither `origin` nor `formats` ever moves into a card's spill (SPEC §6.1a.5), so discovery by origin and by format reads a stub as it reads a full card.
+No origin system fixes a card's `kind` (SPEC §6.1a.2). A row names what the system is and how its `ref` and `attrs` read, and it never names a kind: the publisher chooses the kind from how the app connects (SPEC §6.1a.2), and a reader never refuses or reinterprets a card for its pair of kind and origin. Where a row says which kind a known importer writes, it describes that importer's behaviour today. Neither `origin` nor `formats` ever moves into a card's spill (SPEC §6.1a.5), so discovery by origin and by format reads a stub as it reads a full card.
 
 The registry keeps its values apart from `SPEC.md` on purpose. A value joins here without a SPEC revision, as an IANA registry grows apart from the RFC that created it (RFC 8126).
 
@@ -22,11 +22,13 @@ The registry keeps its values apart from `SPEC.md` on purpose. A value joins her
 
 | System | Status | What it names | `origin.ref` | `origin.attrs` keys |
 |---|---|---|---|---|
-| `realm` | registered | an app of an Embabel realm that a console imported (`REALM.md` §5); the reference console's importer writes kind `fed` today | `<realm>/<app>`, each part `[A-Za-z0-9._-]+` | `realm.format`, `realm.namespace` (both required), `realm.reads`, `realm.bundle` (proposed) |
+| `realm` | registered | an app of an Embabel realm that a console imported (`REALM.md` §5); the reference console's importer writes kind `fed` today | `<realm>/<app>`, each part `[A-Za-z0-9._-]+` | `realm.format`, `realm.namespace` (both required), `realm.digest` (recommended), `realm.reads`, `realm.commit` |
 | `console` | registered | an app a console drafted for a group from its agents' `ui` declarations (SPEC §6.1a.3), which the console's agents feed; the console that drafted it issues the card, and writes kind `fed` today | `<console>/<app>`, each part `[A-Za-z0-9._-]+`: the name the console publishes under, then the app's name in that console | none |
 | `embabel` | candidate | an app in an Embabel-side app catalogue, outside any realm. An Embabel agent that joins as a member is kind `peer` and needs no origin. | not yet defined; the contact defines it with the Embabel team | none yet |
 | `a2a-registry` | candidate | an agent application found in an A2A registry through its Agent Card | the Agent Card's URL | `a2a-registry.registry` (the registry's base URL) |
 | `mcp-registry` | candidate | an MCP server's application listed in an MCP registry | the server's name in the registry | `mcp-registry.registry` (the registry's base URL) |
+
+For `realm`, `origin.version` holds the realm's own semver, and `REALM.md` §5 gives the value of each key and the card's app link `app://<realm>/<app>`.
 
 For `console`, `origin.version` holds `""`, since the card's own `version` already carries the drafted app's version. A console writes its own name into `ref` as data, so the row names no product.
 
